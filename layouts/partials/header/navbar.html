@@ -1,12 +1,13 @@
 {{- $menusPositions := dict "right" "ms-auto" "left" "me-auto" "center" "me-auto ms-auto" -}}
 {{- $baseURL := $.Site.BaseURL -}}
-<nav class="navbar navbar-expand-xl{{ if (default true $.Site.Params.fixedHeader) }} fixed-top{{ end }}">
+<nav class="logobg navbar navbar-expand-xl{{ if (default true $.Site.Params.fixedHeader) }} fixed-top{{ end }}">
   <div class="container{{ if default false .Site.Params.fullWidth }}-fluid{{ end }}">
-    <a class="navbar-brand{{ if .IsHome }} active{{ end }}" href="{{ absLangURL "" }}">
-      <img class="logo" alt="Logo" src="{{ absURL (default "images/logo.webp" .Site.Params.logo) }}" loading="lazy">
+    <a class=" p-2 navbar-brand{{ if .IsHome }} active{{ end }}" href="{{ absLangURL "" }}">
+      <!-- <img class=" logo" alt="Logo" src="{{ absURL (default "images/logo.webp" .Site.Params.logo) }}" loading="lazy">
       {{- with .Site.Params.brand -}}
       {{ . }}
-      {{- end -}}
+      {{- end -}} -->
+      {{- partial "header/logo" . -}}
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
